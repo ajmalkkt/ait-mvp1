@@ -175,6 +175,8 @@ As a **System Admin or Project Manager**, I need to create and manage projects, 
 - **FR6.6**: Add comments/attachments to action items; only team members can view
 - **FR6.7**: Once marked Completed, item requires a completion date (timestamp when marked Completed)
 - **FR6.8**: Deletion: Action items cannot be deleted; only archived/closed; full audit trail retained
+- **FR6.9**: Validation error handling (Clarified 2026-01-21): Form validation errors displayed inline at field level (e.g., "Due date must be in future" below date field, "Owner must be team member" below owner field); concurrent edit conflicts shown in modal with "Refresh to see latest version" option
+- **FR6.10**: Overdue status management (Clarified 2026-01-21): "Overdue" is automatically assigned by the daily escalation job when due_date < today and status != Completed; users cannot manually select "Overdue" status to prevent data integrity issues and maintain clear audit trail
 
 #### 7. Dashboards & Tracking
 - **FR7.1**: "My Action Items" dashboard shows all items assigned to current user with filters: status, due date, project, priority
@@ -192,6 +194,7 @@ As a **System Admin or Project Manager**, I need to create and manage projects, 
 - **FR8.4**: Overdue escalation: Daily job (runs at 8 AM company timezone) marks items as overdue and notifies Project Manager
 - **FR8.5**: Escalation notification includes item details and link to item; Project Manager can take action (reassign, extend due date)
 - **FR8.6**: User notification preferences MUST be respected (opt-out of email but receive in-app)
+- **FR8.7**: Email delivery failure handling (Clarified 2026-01-21): Failed email notifications are queued in database; retry up to 3 times with exponential backoff (1 minute, 5 minutes, 30 minutes); failures logged for ops team review; in-app notification always sent regardless of email status
 
 #### 9. Audit & History
 - **FR9.1**: Immutable audit log for all action item changes: creation, status changes, owner changes, due date changes, completion
@@ -411,5 +414,15 @@ As a **System Admin or Project Manager**, I need to create and manage projects, 
 
 ---
 
-**Specification Status**: Draft - Ready for clarification questions and validation  
-**Next Step**: Execute `/speckit.clarify` if needed, or proceed directly to `/speckit.plan` for technical design
+## Clarifications
+
+### Session 2026-01-21
+
+- Q: Email notification failure handling strategy? → A: Queue with retry (exponential backoff: 1min, 5min, 30min); log failures for ops; always send in-app notification regardless of email status
+- Q: Validation error messaging approach? → A: Specific field-level errors inline; concurrent edit conflicts in modal with refresh option
+- Q: Should "Overdue" be user-settable or automatic? → A: Automatic only—set by escalation job when due_date < today; users cannot manually select it
+
+---
+
+**Specification Status**: Draft - Clarifications Integrated (3/3)  
+**Next Step**: Specification is fully clarified. Proceed with `/speckit.plan` for technical design and implementation strategy
