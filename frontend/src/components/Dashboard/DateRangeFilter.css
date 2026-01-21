@@ -1,0 +1,97 @@
+/* frontend/src/components/Dashboard/DateRangeFilter.css */
+
+.date-range-filter {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.date-inputs {
+  display: flex;
+  gap: 15px;
+}
+
+.date-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.date-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.date-group input[type="date"] {
+  padding: 8px 12px;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  font-size: 14px;
+  background: white;
+  color: #333;
+  min-width: 140px;
+}
+
+.date-group input[type="date"]:focus {
+  outline: none;
+  border-color: #2196F3;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+.quick-ranges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.quick-btn {
+  padding: 8px 14px;
+  border: 1px solid #d0d0d0;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.quick-btn:hover {
+  background: #2196F3;
+  color: white;
+  border-color: #2196F3;
+}
+
+@media (max-width: 768px) {
+  .date-range-filter {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+
+  .date-inputs {
+    flex-direction: column;
+  }
+
+  .date-group input[type="date"] {
+    min-width: 100%;
+  }
+
+  .quick-ranges {
+    width: 100%;
+  }
+
+  .quick-btn {
+    flex: 1;
+    min-width: 0;
+  }
+}

@@ -1,0 +1,171 @@
+/* frontend/src/components/Dashboard/BarChart.css */
+
+.bar-chart {
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.chart-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.chart-content {
+  min-height: 300px;
+}
+
+.bars-container {
+  display: flex;
+  gap: 15px;
+  align-items: flex-end;
+  height: 300px;
+}
+
+.bars-container.vertical {
+  justify-content: space-around;
+  padding: 20px 10px;
+}
+
+.bars-container.horizontal {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  height: auto;
+}
+
+.bar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.bar-item.vertical {
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 300px;
+}
+
+.bar-item.horizontal {
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.bar-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #666;
+  text-align: center;
+  word-break: break-word;
+}
+
+.bar-item.vertical .bar-label {
+  max-width: 80px;
+  text-align: center;
+}
+
+.bar-item.horizontal .bar-label {
+  min-width: 120px;
+  text-align: left;
+}
+
+.bar {
+  flex: 1;
+  background: #2196F3;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4px;
+}
+
+.bar-item.vertical .bar {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  min-width: 40px;
+}
+
+.bar-item.horizontal .bar {
+  height: 30px;
+  border-radius: 4px;
+  min-width: 10px;
+}
+
+.bar:hover {
+  opacity: 0.8;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+.bar-value {
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.bar-item.vertical .bar-value {
+  position: absolute;
+  bottom: -20px;
+}
+
+.bar-item.horizontal .bar-value {
+  margin: 0 8px;
+}
+
+.bar-wrapper {
+  flex: 1;
+  background: #f5f5f5;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 30px;
+}
+
+@media (max-width: 768px) {
+  .bar-chart {
+    padding: 15px;
+  }
+
+  .chart-content {
+    min-height: 250px;
+  }
+
+  .bars-container {
+    height: 250px;
+    gap: 10px;
+  }
+
+  .bars-container.vertical {
+    padding: 20px 5px;
+  }
+
+  .bar-item.vertical {
+    min-height: 250px;
+  }
+
+  .bar-item.vertical .bar-label {
+    font-size: 11px;
+    max-width: 60px;
+  }
+
+  .bar-item.horizontal .bar-label {
+    min-width: 100px;
+    font-size: 12px;
+  }
+
+  .bar-value {
+    font-size: 11px;
+  }
+
+  .bar-item.vertical .bar-value {
+    bottom: -18px;
+  }
+}

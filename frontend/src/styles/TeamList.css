@@ -1,0 +1,26 @@
+/* frontend/src/styles/TeamList.css */
+/* Teams list styling */
+
+.team-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.team-list .empty-state,
+.team-list .list-loading {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team-list {
+    grid-template-columns: 1fr;
+  }
+}

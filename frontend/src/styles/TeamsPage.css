@@ -1,0 +1,127 @@
+/* frontend/src/styles/TeamsPage.css */
+/* Teams page styling */
+
+.teams-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.teams-page .page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.teams-page h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #333;
+}
+
+.teams-page .btn-new-team {
+  padding: 0.75rem 1.5rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.teams-page .btn-new-team:hover {
+  background-color: #218838;
+}
+
+.teams-page .form-section {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.teams-page .filters-section {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.teams-page .search-input,
+.teams-page .filter-select {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.teams-page .search-input {
+  flex: 1;
+  min-width: 200px;
+}
+
+.teams-page .filter-select {
+  min-width: 150px;
+}
+
+.teams-page .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.teams-page .pagination button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.teams-page .pagination button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.teams-page .pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.teams-page .page-indicator {
+  color: #666;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .teams-page {
+    padding: 1rem;
+  }
+
+  .teams-page .page-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .teams-page .btn-new-team {
+    width: 100%;
+  }
+
+  .teams-page .filters-section {
+    flex-direction: column;
+  }
+
+  .teams-page .search-input,
+  .teams-page .filter-select {
+    width: 100%;
+  }
+}

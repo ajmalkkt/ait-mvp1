@@ -1,0 +1,90 @@
+/* frontend/src/styles/Badges.css */
+
+.badge {
+  display: inline-block;
+  padding: 0.35rem 0.65rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+/* Status Badges */
+.badge-status {
+  background-color: #e7f3ff;
+  color: #0056b3;
+}
+
+.badge-open {
+  background-color: #e7f3ff;
+  color: #0056b3;
+}
+
+.badge-in_progress {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.badge-completed {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.badge-closed {
+  background-color: #e2e3e5;
+  color: #383d41;
+}
+
+.badge-on_hold {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.badge-overdue {
+  background-color: #f5c2c7;
+  color: #842029;
+  animation: pulse-overdue 2s infinite;
+}
+
+/* Priority Badges */
+.badge-priority {
+  background-color: #f0f0f0;
+  color: #666;
+}
+
+.badge-high {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.badge-medium {
+  background-color: #fff3e0;
+  color: #e65100;
+}
+
+.badge-low {
+  background-color: #f3e5f5;
+  color: #512da8;
+}
+
+/* Pulse animation for overdue items */
+@keyframes pulse-overdue {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 576px) {
+  .badge {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.5rem;
+  }
+}

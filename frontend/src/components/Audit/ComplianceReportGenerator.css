@@ -1,0 +1,288 @@
+/* frontend/src/components/Audit/ComplianceReportGenerator.css */
+
+.compliance-report-generator {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+}
+
+.generator-header {
+  padding: 15px 20px;
+  background: #f9f9f9;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.toggle-button {
+  width: 100%;
+  text-align: left;
+  padding: 10px 0;
+  border: none;
+  background: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.2s ease;
+}
+
+.toggle-button:hover {
+  color: #2196F3;
+}
+
+.date-selector {
+  padding: 20px;
+  background: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  align-items: flex-end;
+}
+
+.date-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.date-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.date-group input[type="date"] {
+  padding: 8px 10px;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  font-size: 14px;
+  background: white;
+  color: #333;
+}
+
+.date-group input[type="date"]:focus {
+  outline: none;
+  border-color: #2196F3;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+.quick-ranges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.quick-ranges button {
+  padding: 8px 12px;
+  border: 1px solid #d0d0d0;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  color: #333;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.quick-ranges button:hover {
+  background: #2196F3;
+  color: white;
+  border-color: #2196F3;
+}
+
+.report-loading {
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+}
+
+.report-summary {
+  padding: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.report-summary h3 {
+  margin: 0 0 15px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.summary-card {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  border: 1px solid #e8e8e8;
+}
+
+.summary-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2196F3;
+  margin-bottom: 5px;
+}
+
+.summary-label {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.report-section {
+  padding: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.report-section h4 {
+  margin: 0 0 15px 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.action-list,
+.resource-list,
+.risk-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.action-list li,
+.resource-list li,
+.risk-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 13px;
+}
+
+.action-list li:last-child,
+.resource-list li:last-child,
+.risk-list li:last-child {
+  border-bottom: none;
+}
+
+.action-name,
+.resource-id,
+.risk-label {
+  color: #333;
+  font-weight: 500;
+}
+
+.action-count,
+.modification-count,
+.risk-value {
+  color: #2196F3;
+  font-weight: 600;
+  background: #e3f2fd;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 11px;
+}
+
+.risk-list li.warning {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px;
+  background: #fff3e0;
+  border-radius: 4px;
+  border: 1px solid #ffe0b2;
+}
+
+.risk-list li.warning .risk-label {
+  color: #f57f17;
+}
+
+.unusual-activity {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.unusual-activity div {
+  font-size: 12px;
+  color: #f57f17;
+  padding: 4px 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+.unusual-activity div::before {
+  content: '⚠';
+  position: absolute;
+  left: 0;
+}
+
+.report-actions {
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.export-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.export-button.export-json {
+  background: #2196F3;
+  color: white;
+}
+
+.export-button.export-json:hover {
+  background: #1976D2;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+}
+
+.export-button.export-csv {
+  background: #4CAF50;
+  color: white;
+}
+
+.export-button.export-csv:hover {
+  background: #388E3C;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+}
+
+.compliance-error {
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #d84315;
+  background: #ffebee;
+  border: 1px solid #ffccbc;
+  border-radius: 6px;
+  margin: 20px;
+}

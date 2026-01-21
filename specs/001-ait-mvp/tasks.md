@@ -47,63 +47,63 @@ Format rules:
 
 ### Setup Tasks
 
-- [ ] T001 Create backend project structure with Express, TypeScript, and dependency scaffolding in `backend/`
-- [ ] T002 Create frontend project structure with React + Vite, TypeScript, and routing setup in `frontend/`
-- [ ] T003 [P] Create PostgreSQL database migrations directory structure in `backend/migrations/`
-- [ ] T004 [P] Create `.env.example` template with required environment variables (DB_URL, SUPABASE_KEY, JWT_SECRET, etc.) in `backend/`
-- [ ] T005 [P] Create `.env.example` template for frontend (API_BASE_URL, VITE_SUPABASE_URL) in `frontend/`
-- [ ] T006 Initialize package.json scripts for build, test, dev, migrate in `backend/package.json`
-- [ ] T007 [P] Initialize package.json scripts for build, test, dev in `frontend/package.json`
+- [X] T001 Create backend project structure with Express, TypeScript, and dependency scaffolding in `backend/`
+- [X] T002 Create frontend project structure with React + Vite, TypeScript, and routing setup in `frontend/`
+- [X] T003 [P] Create PostgreSQL database migrations directory structure in `backend/migrations/`
+- [X] T004 [P] Create `.env.example` template with required environment variables (DB_URL, SUPABASE_KEY, JWT_SECRET, etc.) in `backend/`
+- [X] T005 [P] Create `.env.example` template for frontend (API_BASE_URL, VITE_SUPABASE_URL) in `frontend/`
+- [X] T006 Initialize package.json scripts for build, test, dev, migrate in `backend/package.json`
+- [X] T007 [P] Initialize package.json scripts for build, test, dev in `frontend/package.json`
 - [ ] T008 Create GitHub Actions workflow for CI/CD in `.github/workflows/ci.yml`
 
 ### Database & Multi-Tenancy Foundation
 
-- [ ] T009 Create SQL migration: `001_init_schema.sql` with base tables (companies, users) in `backend/migrations/`
-- [ ] T010 [P] Create SQL migration: `002_action_items_schema.sql` with action_items, projects, teams, meetings tables in `backend/migrations/`
-- [ ] T011 [P] Create SQL migration: `003_audit_logs_schema.sql` with immutable audit_logs and notifications_queue tables in `backend/migrations/`
-- [ ] T012 [P] Create SQL migration: `004_indexes.sql` with performance indexes (company_id + status + due_date, etc.) in `backend/migrations/`
-- [ ] T013 Create RLS (Row Level Security) policies in `005_rls_policies.sql` enforcing company_id isolation in `backend/migrations/`
-- [ ] T014 [P] Create RLS policies for action_items, projects, teams, meetings, audit_logs, notifications in `backend/migrations/005_rls_policies.sql`
+- [X] T009 Create SQL migration: `001_init_schema.sql` with base tables (companies, users) in `backend/migrations/`
+- [X] T010 [P] Create SQL migration: `002_action_items_schema.sql` with action_items, projects, teams, meetings tables in `backend/migrations/`
+- [X] T011 [P] Create SQL migration: `003_audit_logs_schema.sql` with immutable audit_logs and notifications_queue tables in `backend/migrations/`
+- [X] T012 [P] Create SQL migration: `004_indexes.sql` with performance indexes (company_id + status + due_date, etc.) in `backend/migrations/`
+- [X] T013 Create RLS (Row Level Security) policies in `005_rls_policies.sql` enforcing company_id isolation in `backend/migrations/`
+- [X] T014 [P] Create RLS policies for action_items, projects, teams, meetings, audit_logs, notifications in `backend/migrations/005_rls_policies.sql`
 - [ ] T015 [P] Create Supabase project setup script (enable RLS, create policies, seed test company) in `backend/scripts/init-supabase.sh`
 - [ ] T016 Run migrations in Supabase and verify schema with RLS policies enabled
 
 ### Authentication & Authorization
 
-- [ ] T017 Create JWT validation middleware in `backend/src/middleware/auth.ts` supporting Supabase auth
-- [ ] T018 [P] Create company isolation middleware in `backend/src/middleware/company.ts` to extract and validate company_id from JWT
-- [ ] T019 [P] Create RBAC permission check middleware in `backend/src/middleware/rbac.ts` with role-to-permission mapping
-- [ ] T020 [P] Create error handling middleware in `backend/src/middleware/error.ts` with consistent error response format
-- [ ] T021 Create Supabase client factory in `backend/src/auth/supabase.ts` for JWT verification
+- [X] T017 Create JWT validation middleware in `backend/src/middleware/auth.ts` supporting Supabase auth
+- [X] T018 [P] Create company isolation middleware in `backend/src/middleware/company.ts` to extract and validate company_id from JWT
+- [X] T019 [P] Create RBAC permission check middleware in `backend/src/middleware/rbac.ts` with role-to-permission mapping
+- [X] T020 [P] Create error handling middleware in `backend/src/middleware/error.ts` with consistent error response format
+- [X] T021 Create Supabase client factory in `backend/src/auth/supabase.ts` for JWT verification
 - [ ] T022 [P] Create test suite for auth middleware in `backend/tests/auth.test.ts` (JWT validation, company isolation, RBAC)
 
 ### Express API Scaffolding
 
-- [ ] T023 Create Express app initialization with middleware chain in `backend/src/app.ts`
-- [ ] T024 [P] Create server startup file in `backend/src/server.ts` with graceful shutdown
-- [ ] T025 [P] Create health check endpoint GET `/health` in `backend/src/routes/health.ts`
-- [ ] T026 [P] Create API router structure in `backend/src/routes/index.ts` with route mounting
-- [ ] T027 Create database connection factory in `backend/src/db/connection.ts` with connection pooling
-- [ ] T028 [P] Create validation utility functions in `backend/src/utils/validation.ts` (future field validators)
-- [ ] T029 [P] Create response formatter utility in `backend/src/utils/response.ts` for consistent API responses
+- [X] T023 Create Express app initialization with middleware chain in `backend/src/app.ts`
+- [X] T024 [P] Create server startup file in `backend/src/server.ts` with graceful shutdown
+- [X] T025 [P] Create health check endpoint GET `/health` in `backend/src/routes/health.ts`
+- [X] T026 [P] Create API router structure in `backend/src/routes/index.ts` with route mounting
+- [X] T027 Create database connection factory in `backend/src/db/connection.ts` with connection pooling
+- [X] T028 [P] Create validation utility functions in `backend/src/utils/validation.ts` (future field validators)
+- [X] T029 [P] Create response formatter utility in `backend/src/utils/response.ts` for consistent API responses
 - [ ] T030 Create test suite for Express initialization in `backend/tests/setup.test.ts` (app boots, health check works)
 
 ### React Frontend Scaffolding
 
-- [ ] T031 Create React app entry point with Vite config in `frontend/src/main.tsx`
-- [ ] T032 [P] Create App router setup with React Router in `frontend/src/App.tsx`
-- [ ] T033 [P] Create Supabase client initialization in `frontend/src/services/supabase.ts`
-- [ ] T034 [P] Create API client factory with axios/fetch in `frontend/src/services/api.ts`
-- [ ] T035 [P] Create auth context and provider in `frontend/src/context/AuthContext.tsx` (login, logout, user state)
-- [ ] T036 [P] Create company context and provider in `frontend/src/context/CompanyContext.tsx` (company_id, isolation)
-- [ ] T037 [P] Create authentication layout in `frontend/src/layouts/AuthLayout.tsx` (login page structure)
+- [X] T031 Create React app entry point with Vite config in `frontend/src/main.tsx`
+- [X] T032 [P] Create App router setup with React Router in `frontend/src/App.tsx`
+- [X] T033 [P] Create Supabase client initialization in `frontend/src/services/supabase.ts`
+- [X] T034 [P] Create API client factory with axios/fetch in `frontend/src/services/api.ts`
+- [X] T035 [P] Create auth context and provider in `frontend/src/context/AuthContext.tsx` (login, logout, user state)
+- [X] T036 [P] Create company context and provider in `frontend/src/context/CompanyContext.tsx` (company_id, isolation)
+- [X] T037 [P] Create authentication layout in `frontend/src/layouts/AuthLayout.tsx` (login page structure)
 - [ ] T038 Create test suite for React initialization in `frontend/tests/setup.test.ts` (app renders, context works)
 
 ### Documentation
 
-- [ ] T039 [P] Create database schema diagram and document in `docs/database-schema.md`
-- [ ] T040 [P] Create API contract documentation (OpenAPI 3.0) in `docs/api-contract.md` (stub for all endpoints)
-- [ ] T041 Create local development setup guide in `docs/DEVELOPMENT.md` (env setup, migrations, running locally)
-- [ ] T042 [P] Create architecture decision document in `docs/architecture.md` (why Supabase, RLS, multi-tenancy approach)
+- [X] T039 [P] Create database schema diagram and document in `docs/database-schema.md`
+- [X] T040 [P] Create API contract documentation (OpenAPI 3.0) in `docs/api-contract.md` (stub for all endpoints)
+- [X] T041 Create local development setup guide in `docs/DEVELOPMENT.md` (env setup, migrations, running locally)
+- [X] T042 [P] Create architecture decision document in `docs/architecture.md` (why Supabase, RLS, multi-tenancy approach)
 
 ---
 

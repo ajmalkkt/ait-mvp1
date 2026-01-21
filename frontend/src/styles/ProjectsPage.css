@@ -1,0 +1,127 @@
+/* frontend/src/styles/ProjectsPage.css */
+/* Projects page styling */
+
+.projects-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.projects-page .page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.projects-page h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #333;
+}
+
+.projects-page .btn-new-project {
+  padding: 0.75rem 1.5rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.projects-page .btn-new-project:hover {
+  background-color: #218838;
+}
+
+.projects-page .form-section {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.projects-page .filters-section {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.projects-page .search-input,
+.projects-page .filter-select {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.projects-page .search-input {
+  flex: 1;
+  min-width: 200px;
+}
+
+.projects-page .filter-select {
+  min-width: 150px;
+}
+
+.projects-page .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.projects-page .pagination button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.projects-page .pagination button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.projects-page .pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.projects-page .page-indicator {
+  color: #666;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projects-page {
+    padding: 1rem;
+  }
+
+  .projects-page .page-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .projects-page .btn-new-project {
+    width: 100%;
+  }
+
+  .projects-page .filters-section {
+    flex-direction: column;
+  }
+
+  .projects-page .search-input,
+  .projects-page .filter-select {
+    width: 100%;
+  }
+}

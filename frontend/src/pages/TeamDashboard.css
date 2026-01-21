@@ -1,0 +1,179 @@
+/* frontend/src/pages/TeamDashboard.css */
+
+.team-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.team-dashboard.loading,
+.team-dashboard.empty,
+.team-dashboard.error {
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.team-dashboard.loading p,
+.team-dashboard.empty p {
+  font-size: 16px;
+  color: #999;
+}
+
+.team-dashboard.error {
+  background: #ffebee;
+  border: 1px solid #ffccbc;
+  border-radius: 8px;
+}
+
+.team-dashboard.error p {
+  color: #d84315;
+  font-weight: 600;
+}
+
+.page-header {
+  margin-bottom: 10px;
+}
+
+.page-header h1 {
+  margin: 0 0 10px 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+}
+
+.page-header p {
+  margin: 0;
+  font-size: 14px;
+  color: #999;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+}
+
+.chart-card {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+}
+
+.members-table {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+}
+
+.members-table h3 {
+  margin: 0 0 20px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.members-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.members-table thead {
+  background: #f9f9f9;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.members-table th {
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.members-table tbody tr {
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
+.members-table tbody tr:hover {
+  background-color: #fafafa;
+}
+
+.members-table td {
+  padding: 12px 15px;
+  color: #555;
+}
+
+.progress-bar {
+  display: inline-block;
+  width: 100px;
+  height: 6px;
+  background: #e0e0e0;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #2196F3);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-dashboard {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+  }
+
+  .page-header h1 {
+    font-size: 20px;
+  }
+
+  .members-table {
+    padding: 15px;
+    overflow-x: auto;
+  }
+
+  .members-table table {
+    min-width: 100%;
+  }
+
+  .members-table th,
+  .members-table td {
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+
+  .progress-bar {
+    width: 60px;
+  }
+}
